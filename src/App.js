@@ -29,26 +29,26 @@ import './App.css';
 
 function App() {
   // Un hook
-  const [red, setRed] = useState(false)
+  const [number, setNumber] = useState(0)
 
-  const changeToRed = () => {
-    setRed(true)
+  const numberPlus = () => {
+    setNumber(number++)
   }
 
-  const changeToBlue = () => {
-    setRed(false)
+  const numberMinus = () => {
+    setNumber(number--)
   }
 
   // JSX
   return (
     <div className="App">
-      <button onClick={changeToRed}>Changer en rouge</button>
-      <button onClick={changeToBlue}>Changer en bleu</button>
+      <button onClick={numberPlus}>+</button>
+      <button onClick={numberMinus}>-</button>
       <p
-        style={{
-          color: red ? 'red' : 'blue'
-        }}
-      >{red ? 'Rouge' : 'Pas rouge'}</p>
+        style={
+          fontSize = number
+        }
+      >{number}</p>
     </div>
   );
 }
