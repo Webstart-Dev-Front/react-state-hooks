@@ -1,54 +1,24 @@
-import { useState } from 'react'
 import './App.css';
-
-// GÈRER LE STATE (l'Etat d'un composant react).
-// Créer un projet react:
-// - Créer un nouveau répo dans l'organisation github: react-state-[VOTRE_PRENOM]
-// - Créer un nouveau projet react: npx create-react-app react-state
-
-// JSS
-
-// Ternaire
-
-// Inserer du JS dans le JSX
-
-// Les fonctions dans les composant
-
-// function add() {
-
-// }
-
-// Arrow functions
-
-// const add = () => {
-
-// }
-
-// Créer deux boutons + et - qui incremente et décrémente une variable number initialisé via un hook (useState)
-// Ajouter une augmentation de taille lorsqu'on incremente
+import React, { useEffect, useState } from "react";
 
 function App() {
-  // Un hook
-  const [number, setNumber] = useState(0)
+  var [number, setNumber] = useState(10)
 
   const numberPlus = () => {
     setNumber(number++)
   }
 
   const numberMinus = () => {
-    setNumber(number--)
+    if (number > 10) {
+      setNumber(number--)
+    }
   }
 
-  // JSX
   return (
     <div className="App">
       <button onClick={numberPlus}>+</button>
       <button onClick={numberMinus}>-</button>
-      <p
-        style={
-          fontSize = number
-        }
-      >{number}</p>
+      <p style={{ fontSize: number }}>{number}px</p>
     </div>
   );
 }
